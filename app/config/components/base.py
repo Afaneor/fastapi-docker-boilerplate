@@ -1,3 +1,5 @@
-ENV = 'example'
-APP_HOST = 'localhost'
-APP_PORT = 8000
+from os import environ
+
+ENV = environ.get('ENV', 'development')
+APP_HOST = environ.get('APP_HOST', '0.0.0.0')
+APP_PORT = environ.get('APP_PORT', 8000)

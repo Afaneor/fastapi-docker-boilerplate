@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app import config
-from app.api import router
+import config
+from api import router
 
 
 def _init_router(_app: FastAPI) -> None:
