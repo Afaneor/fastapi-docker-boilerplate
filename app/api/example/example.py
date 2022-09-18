@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Response, Depends
+from fastapi import APIRouter
+from starlette.responses import PlainTextResponse
 
 example_router = APIRouter()
 
 
 @example_router.get("/foo")
-async def home():
-    return Response('bar')
+async def foo():
+    return PlainTextResponse('bar')
