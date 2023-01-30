@@ -9,3 +9,25 @@ services:
       - "8000:8000"
     environment:
       ENV: production
+
+  postgres:
+    image: postgres:15.1
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    env_file:
+      - .env
+    restart: unless-stopped
+
+networks:
+  postgres:
+
+volumes:
+    postgres:
