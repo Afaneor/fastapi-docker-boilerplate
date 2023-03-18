@@ -1,0 +1,24 @@
+image: tmaier/docker-compose
+
+stages:
+  - build
+
+variables:
+  PROJECT_NAME: "{{cookiecutter.project_name}}"
+  REGISTRY: "${CI_REGISTRY}"
+  IMAGE_FULL_NAME: "${CI_REGISTRY_IMAGE}"
+  COMPOSE_PROJECT_NAME: "${PROJECT_NAME}-${CI_PIPELINE_IID}-${CI_JOB_NAME}"
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  - export IMAGE=${CI_BUILD_TAG:-${CI_COMMIT_REF_SLUG:-develop}}
+
+build:
+  stage: build
+  script:
+    - env
+    - docker-compose pull server
+    - docker-compose build server
+    - docker-compose push server
+  tags:
+    - docker

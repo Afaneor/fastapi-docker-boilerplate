@@ -1,15 +1,8 @@
-# Start
+# Usage
+You should install cookiecutter first:
 
-To start up the app you can run native with:
-```shell
-python app/main.py
-```
-or docker way:
+`pip install "cookiecutter>=1.7.0"`
 
-```shell
-docker-compose up -d
-```
+To create new project use this command
 
-# TODO
-* Add we-make-services linters
-* Tests
+`cookiecutter https://github.com/Afaneor/fastapi-docker-boilerplate`

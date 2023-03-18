@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "fastapi-boilerplate"
+name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
-description = "Fastapi boilerplate"
-authors = ["Nikolay Pavlin <afaneor@gmail.com>"]
+description = "{{cookiecutter.description}}"
+authors = ["cookiecutter.author"]
 license = "MIT"
 
 [tool.poetry.dependencies]
