@@ -5,8 +5,6 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    ports:
-      - "8000:8000"
     environment:
       ENV: production
 
@@ -16,14 +14,8 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       PGDATA: /data/postgres
-    volumes:
-       - postgres:/data/postgres
-    ports:
-      - "5432:5432"
     networks:
       - postgres
-    env_file:
-      - .env
     restart: unless-stopped
 
 networks:

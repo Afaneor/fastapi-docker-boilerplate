@@ -17,8 +17,8 @@ build:
   stage: build
   script:
     - env
-    - docker-compose pull server
-    - docker-compose build server
-    - docker-compose push server
+    - docker-compose -f docker-compose.ci.yml pull server
+    - docker-compose -f docker-compose.ci.yml build server
+    - docker-compose -f docker-compose.ci.yml push server
   tags:
     - docker

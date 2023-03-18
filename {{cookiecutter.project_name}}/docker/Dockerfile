@@ -15,6 +15,10 @@ ENV PYTHONUNBUFFERED=1 \
 	LC_ALL=ru_RU.UTF-8 \
 	LC_TIME=ru_RU.UTF-8 \
 	LANGUAGE=ru_RU.UTF-8
+	# paths
+    # this is where our requirements + virtual environment will live
+    PYSETUP_PATH="/opt/pysetup" \
+    VENV_PATH="/opt/pysetup/.venv"
 
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
