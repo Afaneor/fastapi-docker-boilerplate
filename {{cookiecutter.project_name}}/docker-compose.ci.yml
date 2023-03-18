@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   server:
+    image: ${IMAGE_FULL_NAME-{{cookiecutter.project_name}}}
     build:
       context: .
       dockerfile: docker/Dockerfile
