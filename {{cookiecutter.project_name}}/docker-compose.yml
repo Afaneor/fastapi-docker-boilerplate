@@ -9,6 +9,8 @@ services:
       - "8000:8000"
     environment:
       ENV: production
+    networks:
+      - postgres
 
   postgres:
     image: postgres:15.1
