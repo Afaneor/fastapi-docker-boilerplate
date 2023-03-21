@@ -8,6 +8,8 @@ services:
       dockerfile: docker/Dockerfile
     environment:
       ENV: production
+    networks:
+      - postgres
 
   postgres:
     image: postgres:15.1
