@@ -12,9 +12,9 @@ DB_CONFIG = {
             'credentials': {
                 'host': environ.get('DB_HOST', 'localhost'),
                 'port': environ.get('DB_PORT', 5432),
-                'user': environ.get('DB_HOST', 'postgres'),
-                'password': environ.get('DB_HOST', 'postgres'),
-                'database': environ.get('DB_HOST', 'postgres'),
+                'user': environ.get('DB_USER', 'postgres'),
+                'password': environ.get('DB_PASSWORD', 'postgres'),
+                'database': environ.get('DB_DATABASE', 'postgres'),
             }
         },
     },
