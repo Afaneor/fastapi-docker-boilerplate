@@ -22,6 +22,7 @@ DB_CONFIG = {
         'server': {
             'models': [
                 'aerich.models',
+                'db.models',
             ],
         }
     },
