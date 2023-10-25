@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off \
     USE_DOCKER=1 \
 	# poetry:
-	POETRY_VERSION=1.2.0 \
+	POETRY_VERSION=1.6.1 \
 	POETRY_VIRTUALENVS_CREATE=false \
 	POETRY_CACHE_DIR='/var/cache/pypoetry' \
 	# Locale settings
@@ -46,7 +46,7 @@ COPY poetry.lock pyproject.toml ./
 
 RUN poetry install --no-dev
 
-FROM python-base as production
+FROM builder-base as production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 COPY ./app /app/
 WORKDIR /app
