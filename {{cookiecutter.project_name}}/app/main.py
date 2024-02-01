@@ -1,6 +1,5 @@
-import uvicorn
-
 import config
+import uvicorn
 
 
 def main():

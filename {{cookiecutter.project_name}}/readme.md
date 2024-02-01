@@ -11,5 +11,8 @@ docker-compose up -d
 ```
 
 # TODO
-* Add we-make-services linters
-* Tests
+* ~~linters~~
+* ~~Tests~~
+* wemake services linters
+* admin
+* celery

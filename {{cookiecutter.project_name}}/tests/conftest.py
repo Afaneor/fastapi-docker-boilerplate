@@ -1,6 +1,7 @@
-from starlette.testclient import TestClient
-from server.server import app
 import pytest
+from starlette.testclient import TestClient
+
+from app.server.server import app
 
 
 @pytest.fixture(scope='session')

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "{{cookiecutter.project_name}}"
+name = "New Project"
 version = "0.1.0"
-description = "{{cookiecutter.description}}"
-authors = ["{{cookiecutter.author}}"]
+description = "Super new project"
+authors = ["Author"]
 license = "MIT"
 
 [tool.poetry.dependencies]
@@ -12,6 +12,9 @@ uvicorn = {extras = ["standard"], version = "^0.20.0"}
 django-split-settings = "^1.1.0"
 tortoise-orm = {extras = ["asyncpg"], version = "^0.19.3"}
 aerich = "^0.7.1"
+httpx = "^0.26.0"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.3"

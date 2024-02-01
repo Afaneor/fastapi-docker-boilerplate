@@ -1,6 +1,5 @@
-from tortoise import Tortoise
-
 import config
+from tortoise import Tortoise
 
 
 async def init():
