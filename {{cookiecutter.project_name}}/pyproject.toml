@@ -7,10 +7,10 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.89.1"
+fastapi = "^0.110"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
 django-split-settings = "^1.1.0"
-tortoise-orm = {extras = ["asyncpg"], version = "^0.19.3"}
+tortoise-orm = {extras = ["asyncpg"], version = "^0.20"}
 aerich = "^0.7.1"
 httpx = "^0.26.0"
 isort = "^5.13.2"
