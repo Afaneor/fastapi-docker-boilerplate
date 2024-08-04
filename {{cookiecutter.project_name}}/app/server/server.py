@@ -1,4 +1,4 @@
-import config
+from config import settings
 from api import router
 from fastapi import FastAPI
 
@@ -12,8 +12,8 @@ def create_app() -> FastAPI:
         title="Hide",
         description="Hide API",
         version="1.0.0",
-        docs_url=None if config.ENV == "production" else "/docs",
-        redoc_url=None if config.ENV == "production" else "/redoc",
+        docs_url=settings.docs_url,
+        redoc_url=settings.redoc_url,
     )
     _init_router(_app)
     return _app

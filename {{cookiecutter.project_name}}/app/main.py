@@ -1,14 +1,14 @@
-import config
+from config import settings
 import uvicorn
 
 
 def main():
     uvicorn.run(
         app="server.server:app",
-        host=config.APP_HOST or '0.0.0.0',
-        port=config.APP_PORT or 8000,
-        reload=True if config.ENV != "production" else False,
-        workers=1,
+        host=settings.app_host,
+        port=settings.app_port,
+        reload=settings.reload,
+        workers=settings.workers,
     )
 
 
