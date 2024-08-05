@@ -11,6 +11,7 @@ services:
       ENV: production
     networks:
       - postgres
+      - backend
 
   postgres:
     image: postgres:15.1
@@ -28,8 +29,19 @@ services:
       - .env
     restart: unless-stopped
 
+  redis:
+    image: redis:7.4.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data:/data
+    networks:
+      - postgres
+      - backend
+
 networks:
   postgres:
+  backend:
 
 volumes:
     postgres:
