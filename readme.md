@@ -17,6 +17,9 @@ Then create `.env` file with
 cp .env.example .env
 ```
 
+Don't forget to mark app folder as source in pycharm
+![img.png](img.png)
+
 start db in docker
 ```bash
 docker-compose up -d postgres
