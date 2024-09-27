@@ -22,4 +22,4 @@ def get_settings() -> ProductionSettings | DevelopmentSettings:
 
 
 settings = get_settings()
-
+tortoise_settings = settings.tortoise_config  # we need this for tortoise-orm

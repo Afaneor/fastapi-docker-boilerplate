@@ -1,5 +1,7 @@
 from pydantic_settings import BaseSettings
 
+from config._constants import ENV_FILE_PATH
+
 
 class ProductionConfig(BaseSettings):
     env: str = 'production'
@@ -10,5 +12,5 @@ class ProductionConfig(BaseSettings):
     origins: list[str] = ['http://localhost:3000', 'http://localhost:8080']
 
     class Config:
-        env_file = '.env'
+        env_file = ENV_FILE_PATH
         env_file_encoding = 'utf-8'

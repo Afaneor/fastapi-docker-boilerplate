@@ -1,6 +1,8 @@
 from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings
 
+from config._constants import ENV_FILE_PATH
+
 
 class RedisConfig(BaseSettings):
     redis_host: str = Field(default='localhost')
@@ -9,7 +11,7 @@ class RedisConfig(BaseSettings):
     redis_url: str = Field(default='')
 
     class Config:
-        env_file = '.env'
+        env_file = ENV_FILE_PATH
         env_file_encoding = 'utf-8'
 
     @computed_field(return_type=str)
