@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.9, <4.0"
-fastapi = "^0.112"
+fastapi = "^0.115"
 uvicorn = {extras = ["standard"], version = "^0.30"}
 django-split-settings = "^1.1.0"
 tortoise-orm = {extras = ["asyncpg"], version = "^0.21"}
