@@ -24,12 +24,7 @@ class DatabaseConfig(BaseSettings):
     def tortoise_config(self):
         return {
             'connections': {
-                'default': {
-                    'engine': 'tortoise.backends.asyncpg',
-                    'credentials': {
-                        'dsn': self.postgres_connection_string
-                    },
-                },
+                'default': self.postgres_connection_string
             },
             'apps': {
                 'server': {
