@@ -47,6 +47,8 @@ RUN poetry install --no-dev
 
 FROM builder-base as production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
-COPY ./app /app/
-WORKDIR /app
-CMD ["python", "main.py"]
+# we make this to reproduce the same structure as repo for aerich
+COPY ./app /app/app
+COPY pyproject.toml /app/pyproject.toml
+WORKDIR /app/
+CMD ["python", "app/main.py"]

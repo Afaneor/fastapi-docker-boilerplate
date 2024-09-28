@@ -10,6 +10,14 @@ or docker way:
 docker-compose up -d
 ```
 
+# Migrations
+First of all you need to initialize migrations:
+```shell
+aerich init-db
+```
+This will create migrations folder in db module. And all models in 
+__init__.py (db module) will be reflected in the migration.
+
 # TODO
 * ~~linters~~
 * ~~Tests~~
