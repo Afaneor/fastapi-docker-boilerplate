@@ -2,13 +2,13 @@
 
 [[package]]
 name = "aerich"
-version = "0.7.2"
+version = "0.7.1"
 description = "A database migrations tool for Tortoise ORM."
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "aerich-0.7.2-py3-none-any.whl", hash = "sha256:84c78c07d45436b89ca4db5411eca4e9292a591fb7d6fd4282fa4a7d0c6d2af1"},
-    {file = "aerich-0.7.2.tar.gz", hash = "sha256:31d67de7b96184636b89de99062e059e5e6204b6251d24c33eb21fc9cf982e09"},
+    {file = "aerich-0.7.1-py3-none-any.whl", hash = "sha256:ca1c46e777c448c8344961bb591ee8cc7bfcb2fc7527bea4da43647b5fbf8fbe"},
+    {file = "aerich-0.7.1.tar.gz", hash = "sha256:501f6598ae51e3ce19b1bfc21ff365f582e7447e6aa5215629451c40341d6eb8"},
 ]
 
 [package.dependencies]
@@ -19,7 +19,7 @@ tomlkit = "*"
 tortoise-orm = "*"
 
 [package.extras]
-asyncmy = ["asyncmy (>=0.2.8rc1,<0.3.0)"]
+asyncmy = ["asyncmy"]
 asyncpg = ["asyncpg"]
 
 [[package]]
@@ -1182,4 +1182,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9, <4.0"
-content-hash = "d03efb2da0fe2c37d3f5c1ca01a01bb7d65e285220164085c0862879e59b63fc"
+content-hash = "7c350f0e70cfe79fde80b960bc97747e5ade3e0e5a914aefe6e270aa95fe2506"
