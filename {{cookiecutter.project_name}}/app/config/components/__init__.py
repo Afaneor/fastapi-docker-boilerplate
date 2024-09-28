@@ -1,6 +1,6 @@
-from app.config.components.base import BaseConfig
-from app.config.components.db import DatabaseConfig
-from app.config.components.redis import RedisConfig
+from config.components.base import BaseConfig
+from config.components.db import DatabaseConfig
+from config.components.redis import RedisConfig
 
 
 class ComponentsConfig(BaseConfig, DatabaseConfig, RedisConfig):

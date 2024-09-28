@@ -1,6 +1,6 @@
-from app.config.components import ComponentsConfig
-from app.config.envs.development import DevelopmentConfig
-from app.config.envs.production import ProductionConfig
+from config.components import ComponentsConfig
+from config.envs.development import DevelopmentConfig
+from config.envs.production import ProductionConfig
 
 
 class ProductionSettings(ComponentsConfig, ProductionConfig):
@@ -22,4 +22,4 @@ def get_settings() -> ProductionSettings | DevelopmentSettings:
 
 
 settings = get_settings()
-tortoise_settings = settings.tortoise_config  # we need this for tortoise-orm
+tortoise_settings = settings.tortoise_config  # we need this for aerich

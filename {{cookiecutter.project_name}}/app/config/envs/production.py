@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings
 
-from config._constants import ENV_FILE_PATH
+from config.constants import ENV_FILE_PATH
 
 
 class ProductionConfig(BaseSettings):

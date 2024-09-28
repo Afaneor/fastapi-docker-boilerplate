@@ -1,7 +1,7 @@
 from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings
 
-from config._constants import ENV_FILE_PATH
+from config.constants import ENV_FILE_PATH
 
 
 class DatabaseConfig(BaseSettings):
@@ -18,14 +18,14 @@ class DatabaseConfig(BaseSettings):
 
     @computed_field(return_type=str)
     def postgres_connection_string(self):
-        return self.postgres_dsn or f'postgresql://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}'
+        return self.postgres_dsn or f'postgres://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}'
 
     @computed_field(return_type=dict)
     def tortoise_config(self):
         return {
             'connections': {
                 'default': {
-                    'engine': 'tortoise',
+                    'engine': 'tortoise.backends.asyncpg',
                     'credentials': {
                         'dsn': self.postgres_connection_string
                     },
