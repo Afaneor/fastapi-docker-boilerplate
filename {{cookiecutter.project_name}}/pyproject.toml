@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "New Project"
+name = {{cookiecutter.project_name}}
 version = "0.1.0"
-description = "Super new project"
-authors = ["Author"]
+description = {{cookiecutter.description}}
+authors = ["{{cookiecutter.author}}"]
 license = "MIT"
 
 [tool.poetry.dependencies]
