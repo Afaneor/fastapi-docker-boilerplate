@@ -1,29 +1,16 @@
 {
-  "project_name": {
-    "__prompt__": "Enter your project name",
-    "__default__": "your-project-name"
-  },
-  "description": {
-    "__prompt__": "Enter a brief description of your project",
-    "__default__": "Your new great project"
-  },
-  "author": {
-    "__prompt__": "Author of the project",
-    "__default__": "Your name"
-  },
-  "production_domain": {
-    "__prompt__": "Enter the production domain (used for CORS)",
-    "__default__": "https://example.com"
-  },
-  "use_sentry": {
-    "__prompt__": "Do you want to enable Sentry for error tracking?",
-    "__default__": "yes",
-    "__type__": "select",
-    "__choices__": ["yes", "no"]
-  },
-  "sentry_dsn": {
-    "__prompt__": "Enter your Sentry DSN (leave empty if not using Sentry)",
-    "__condition__": "use_sentry == 'yes'",
-    "__type__": "string"
+  "project_name": "your-project-name",
+  "description": "Your new great project",
+  "author": "Your name",
+  "production_domain": "https://example.com",
+  "use_sentry": ["yes", "no"],
+  "sentry_dsn": "",
+  "__prompts__": {
+    "project_name": "Enter your project name",
+    "description": "Enter a brief description of your project",
+    "author": "Enter your name (author of the project)",
+    "production_domain": "Enter the production domain (e.g., https://example.com) used for CORS",
+    "use_sentry": "Do you want to enable Sentry for error tracking?",
+    "sentry_dsn": "Enter your Sentry DSN (leave empty if not using Sentry)"
   }
 }
