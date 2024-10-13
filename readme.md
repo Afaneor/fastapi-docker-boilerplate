@@ -97,6 +97,7 @@ If you have any questions or issues, please create an issue in the project repos
 
 - [x] Liters (Ruff)
 - [x] Basic test
+- [ ] Docker compose for development
 - [ ] Optional [Wemake services linter](https://github.com/wemake-services/wemake-python-styleguide) rules
 - [ ] Optional Admin panel
 - [ ] Optional FastStream
