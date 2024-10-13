@@ -9,7 +9,7 @@ class ProductionConfig(BaseSettings):
     workers: int = 8
 
     # CORS settings
-    cors_origins: list[str] = ["{{production_domain}}"]
+    cors_origins: list[str] = ["{{cookiecutter.production_domain}}"]
     cors_allow_credentials: bool = True
     cors_allow_methods: list[str] = ["GET", "POST", "PUT", "DELETE"]
     cors_allow_headers: list[str] = ["*"]
