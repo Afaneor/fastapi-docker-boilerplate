@@ -8,6 +8,9 @@ class DevelopmentConfig(BaseSettings):
     reload: bool = True
     workers: int = 2
 
+    docs_url: str = "/docs"
+    redoc_url: str = "/redoc"
+
     # CORS settings
     cors_origins: list[str] = ["*"]
     cors_allow_credentials: bool = True

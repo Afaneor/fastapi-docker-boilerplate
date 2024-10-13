@@ -8,6 +8,9 @@ class ProductionConfig(BaseSettings):
     reload: bool = False
     workers: int = 8
 
+    docs_url: str | None = None
+    redoc_url: str | None = None
+
     # CORS settings
     cors_origins: list[str] = ["{{cookiecutter.production_domain}}"]
     cors_allow_credentials: bool = True
