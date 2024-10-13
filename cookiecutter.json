@@ -1,5 +1,13 @@
 {
   "project_name": "your-project-name",
-  "description": "Super new project",
-  "author": "Author"
+  "description": "Your new greate project",
+  "author": "Your name",
+  "production_domain": {
+    "__prompt__": "Enter the production domain (for cors settings)"
+  },
+  "use_sentry": ["yes", "no"],
+  "sentry_dsn": {
+    "__prompt__": "Enter your Sentry DSN (leave empty if not using Sentry)",
+    "__condition__": "use_sentry == 'yes'"
+  }
 }

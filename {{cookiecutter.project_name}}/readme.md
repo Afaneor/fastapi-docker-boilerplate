@@ -24,7 +24,7 @@ This project is based on [FastAPI Docker Boilerplate](https://github.com/Afaneor
 ### Locally
 
 ```shell
-python app/main.py
+python3 app/main.py
 ```
 
 ### Using Docker
