@@ -1,13 +1,14 @@
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
-from tortoise import Tortoise
+from tortoise import Tortoise, generate_config
 from tortoise.contrib.fastapi import RegisterTortoise
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import settings
 from api import router
+
 
 {% if cookiecutter.use_sentry == 'yes' %}
 import sentry_sdk
@@ -39,10 +40,15 @@ def _init_sentry() -> None:
 
 @asynccontextmanager
 async def lifespan_test(_app: FastAPI) -> AsyncGenerator[None, None]:
+    config = generate_config(
+        db_url=settings.test_db_url,
+        app_modules=settings.apps_for_tests,
+        testing=True,
+    )
     try:
         async with RegisterTortoise(
             app=_app,
-            config=settings.tortoise_config,
+            config=config,
             generate_schemas=True,
             add_exception_handlers=True,
             _create_db=True,
@@ -52,6 +58,7 @@ async def lifespan_test(_app: FastAPI) -> AsyncGenerator[None, None]:
         raise
     finally:
         await Tortoise._drop_databases()
+
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:

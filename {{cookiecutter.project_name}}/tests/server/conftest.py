@@ -1,27 +1,26 @@
 import pytest
-from asgi_lifespan import LifespanManager
-from httpx import AsyncClient, ASGITransport
+import pytest_asyncio
 from tortoise import Tortoise
 
 from app.server.server import app
+from tests.utils import client_manager, ClientManagerType
 
 
-@pytest.fixture(scope='module', autouse=True)
-async def client():
-    async with LifespanManager(app) as manager:
-        async with AsyncClient(
-            transport=ASGITransport(app=app),
-            base_url="http://test",
-        ) as client:
-            yield client
+@pytest_asyncio.fixture(scope="module")
+async def async_client() -> ClientManagerType:
+    async with client_manager(app) as c:
+        yield c
 
 
+@pytest.fixture(scope="module")
+def anyio_backend() -> str:
+    return "asyncio"
 
-@pytest.fixture(autouse=True)
+
+@pytest_asyncio.fixture(autouse=True)
 async def clean_db():
     """
     Фикстура для очистки базы данных перед каждым тестом, чтобы тесты были независимыми.
     """
     for model in Tortoise.apps.get("models", {}).values():
         await model.all().delete()
-
