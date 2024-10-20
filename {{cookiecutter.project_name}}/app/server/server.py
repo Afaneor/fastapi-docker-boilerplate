@@ -7,7 +7,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import settings
-from api import router
 
 
 {% if cookiecutter.use_sentry == 'yes' %}
@@ -16,6 +15,7 @@ from sentry_sdk.integrations.fastapi import FastApiIntegration
 {% endif %}
 
 def _init_router(_app: FastAPI) -> None:
+    from api import router
     _app.include_router(router)
 
 def _init_middleware(_app: FastAPI) -> None:
@@ -65,6 +65,7 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     try:
         if getattr(_app.state, "testing", None):
             async with lifespan_test(_app) as _:
+                _init_router(_app)
                 yield
         else:
             async with RegisterTortoise(
@@ -73,6 +74,7 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
                 generate_schemas=True,
                 add_exception_handlers=True,
             ):
+                _init_router(_app)
                 yield
     except Exception as e:
         raise
@@ -89,7 +91,6 @@ def create_app() -> FastAPI:
         docs_url=settings.docs_url,
         redoc_url=settings.redoc_url,
     )
-    _init_router(_app)
     _init_middleware(_app)
     return _app
 
