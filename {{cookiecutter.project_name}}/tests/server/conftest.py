@@ -4,6 +4,10 @@ from starlette.testclient import TestClient
 from app.server.server import app
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='session', autouse=True)
 def client() -> TestClient:
-    return TestClient(app)
+    """
+    Фикстура для тестирования API.
+    """
+    with TestClient(app) as c:
+        yield c
