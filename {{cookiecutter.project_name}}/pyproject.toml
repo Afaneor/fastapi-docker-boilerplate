@@ -7,8 +7,8 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.9, <4.0"
-fastapi = "^0.115"
-uvicorn = {extras = ["standard"], version = "^0.30"}
+fastapi = {extras = ["standard"], version = "^0.115.4"}
+uvicorn = {extras = ["standard"], version = "^0.32"}
 django-split-settings = "^1.1.0"
 tortoise-orm = {extras = ["asyncpg"], version = "^0.21"}
 aerich = "0.7.1"
