@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "prompt-share-backend"
+name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
-description = "Your new great project"
-authors = ["Afaneor"]
+description = "{{cookiecutter.description}}"
+authors = ["{{cookiecutter.author}}"]
 license = "MIT"
 
 [tool.poetry.dependencies]
