@@ -19,6 +19,7 @@ Join our Russian-speaking community for discussions, questions, and support:
 - 🧹 **Linters**: Configured Ruff for maintaining clean code
 - 🔒 **Pydantic Settings**: Secure and type-safe configuration management
 - 🔄 **Redis Support**: Built-in Redis integration for caching and session management
+- 🌍 **Internationalization**: Built-in i18n support with FastAPI-Babel
 - 🚀 **GitLab CI**: Basic GitLab CI pipeline for building Docker images
 
 ## Getting Started
@@ -60,16 +61,6 @@ cookiecutter https://github.com/Afaneor/fastapi-docker-boilerplate
    aerich init
    ```
 
-## Frequently Asked Questions
-
-### Model is not reflected in the migration
-Add the Model to `__init__.py` in the app/models folder.
-
-### How to create a new migration?
-```bash
-aerich migrate
-```
-
 ## What's Included
 
 - FastAPI
@@ -80,6 +71,69 @@ aerich migrate
 - Pydantic Settings
 - Redis support
 - Basic GitLab CI pipeline
+- Internationalization support with FastAPI-Babel
+
+## Internationalization (i18n)
+
+The boilerplate comes with built-in internationalization support using FastAPI-Babel and Pybabel. Translation management is automated through make commands.
+
+### Translation Commands
+
+Makefile provides several commands for managing translations:
+
+```bash
+# Extract translatable strings
+make translations-extract
+
+# Initialize a new language (e.g., Russian)
+make translations-init LANG=ru
+
+# Compile translation messages
+make translations-compile
+
+# Update existing translations
+make translations-update
+
+# Complete workflow for new language
+make translations-all LANG=xx
+```
+
+### Using Translations
+
+1. Mark strings for translation in your code:
+```python
+from fastapi_babel import _
+
+@app.get("/hello")
+async def hello():
+    return {"message": _("Hello, World!")}
+```
+
+2. Structure of translation files:
+```
+app/
+├── locales/
+│   ├── messages.pot      # Template file
+│   ├── en/              # English translations
+│   │   └── LC_MESSAGES/
+│   └── ru/              # Russian translations
+│       └── LC_MESSAGES/
+```
+
+For more details on translation management, check the project's documentation after generation.
+
+## Frequently Asked Questions
+
+### Model is not reflected in the migration
+Add the Model to `__init__.py` in the app/models folder.
+
+### How to create a new migration?
+```bash
+aerich migrate
+```
+
+### How to add a new language?
+Use the make command: `make translations-init LANG=xx` where xx is the language code (e.g., de for German).
 
 ## GitLab CI Pipeline
 
@@ -97,6 +151,7 @@ If you have any questions or issues, please create an issue in the project repos
 
 - [x] Liters (Ruff)
 - [x] Basic test
+- [x] Internationalization support
 - [ ] Docker compose for development
 - [ ] Optional [Wemake services linter](https://github.com/wemake-services/wemake-python-styleguide) rules
 - [ ] Optional Admin panel

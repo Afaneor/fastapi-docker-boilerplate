@@ -1,0 +1,323 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-11-05 19:22+0300\n"
+"PO-Revision-Date: 2024-11-05 20:32+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app/api/example/example.py:10
+msgid "bar"
+msgstr ""
+
+msgid "Object has no attribute '{}'"
+msgstr "Object has no attribute '{}'"
+
+msgid "Invalid JSON: {}"
+msgstr "Invalid JSON: {}"
+
+msgid "JSON input should be string, bytes or bytearray"
+msgstr "JSON input should be string, bytes or bytearray"
+
+msgid "Recursion error - cyclic reference detected"
+msgstr "Recursion error - cyclic reference detected"
+
+msgid "Field required"
+msgstr "Field required"
+
+msgid "Field is frozen"
+msgstr "Field is frozen"
+
+msgid "Instance is frozen"
+msgstr "Instance is frozen"
+
+msgid "Extra inputs are not permitted"
+msgstr "Extra inputs are not permitted"
+
+msgid "Keys should be strings"
+msgstr "Keys should be strings"
+
+msgid "Error extracting attribute: {}"
+msgstr "Error extracting attribute: {}"
+
+msgid "Input should be a valid dictionary or instance of {}"
+msgstr "Input should be a valid dictionary or instance of {}"
+
+msgid "Input should be a valid dictionary or object to extract fields from"
+msgstr "Input should be a valid dictionary or object to extract fields from"
+
+msgid "Input should be a dictionary or an instance of {}"
+msgstr "Input should be a dictionary or an instance of {}"
+
+msgid "Input should be an instance of {}"
+msgstr "Input should be an instance of {}"
+
+msgid "Input should be None"
+msgstr "Input should be None"
+
+msgid "Input should be greater than {}"
+msgstr "Input should be greater than {}"
+
+msgid "Input should be greater than or equal to {}"
+msgstr "Input should be greater than or equal to {}"
+
+msgid "Input should be less than {}"
+msgstr "Input should be less than {}"
+
+msgid "Input should be less than or equal to {}"
+msgstr "Input should be less than or equal to {}"
+
+msgid "Input should be a multiple of {}"
+msgstr "Input should be a multiple of {}"
+
+msgid "Input should be a finite number"
+msgstr "Input should be a finite number"
+
+msgid "Input should be iterable"
+msgstr "Input should be iterable"
+
+msgid "Error iterating over object, error: {}"
+msgstr "Error iterating over object, error: {}"
+
+msgid "Input should be a valid string"
+msgstr "Input should be a valid string"
+
+msgid "Input should be a string, not an instance of a subclass of str"
+msgstr "Input should be a string, not an instance of a subclass of str"
+
+msgid ""
+"Input should be a valid string, unable to parse raw data as a unicode "
+"string"
+msgstr ""
+"Input should be a valid string, unable to parse raw data as a unicode "
+"string"
+
+msgid "String should have at least {}"
+msgstr "String should have at least {}"
+
+msgid "String should have at most {}"
+msgstr "String should have at most {}"
+
+msgid "String should match pattern '{}'"
+msgstr "String should match pattern '{}'"
+
+msgid "Input should be {}"
+msgstr "Input should be {}"
+
+msgid "Input should be a valid dictionary"
+msgstr "Input should be a valid dictionary"
+
+msgid "Input should be a valid mapping, error: {}"
+msgstr "Input should be a valid mapping, error: {}"
+
+msgid "Input should be a valid list"
+msgstr "Input should be a valid list"
+
+msgid "Input should be a valid tuple"
+msgstr "Input should be a valid tuple"
+
+msgid "Input should be a valid set"
+msgstr "Input should be a valid set"
+
+msgid "Input should be a valid boolean"
+msgstr "Input should be a valid boolean"
+
+msgid "Input should be a valid boolean, unable to interpret input"
+msgstr "Input should be a valid boolean, unable to interpret input"
+
+msgid "Input should be a valid integer"
+msgstr "Input should be a valid integer"
+
+msgid "Input should be a valid integer, unable to parse string as an integer"
+msgstr "Input should be a valid integer, unable to parse string as an integer"
+
+msgid "Unable to parse input string as an integer, exceeded maximum size"
+msgstr "Unable to parse input string as an integer, exceeded maximum size"
+
+msgid "Input should be a valid integer, got a number with a fractional part"
+msgstr "Input should be a valid integer, got a number with a fractional part"
+
+msgid "Input should be a valid number"
+msgstr "Input should be a valid number"
+
+msgid "Input should be a valid number, unable to parse string as a number"
+msgstr "Input should be a valid number, unable to parse string as a number"
+
+msgid "Input should be a valid bytes"
+msgstr "Input should be a valid bytes"
+
+msgid "Data should have at least {}"
+msgstr "Data should have at least {}"
+
+msgid "Data should have at most {}"
+msgstr "Data should have at most {}"
+
+msgid "Data should be valid {}"
+msgstr "Data should be valid {}"
+
+msgid "Value error, {}"
+msgstr "Value error, {}"
+
+msgid "Assertion failed, {}"
+msgstr "Assertion failed, {}"
+
+msgid "Input should be a valid date"
+msgstr "Input should be a valid date"
+
+msgid "Input should be a valid date in the format YYYY-MM-DD, {}"
+msgstr "Input should be a valid date in the format YYYY-MM-DD, {}"
+
+msgid "Input should be a valid date or datetime, {}"
+msgstr "Input should be a valid date or datetime, {}"
+
+msgid "Datetimes provided to dates should have zero time - e.g. be exact dates"
+msgstr "Datetimes provided to dates should have zero time - e.g. be exact dates"
+
+msgid "Date should be in the past"
+msgstr "Date should be in the past"
+
+msgid "Date should be in the future"
+msgstr "Date should be in the future"
+
+msgid "Input should be a valid time"
+msgstr "Input should be a valid time"
+
+msgid "Input should be in a valid time format, {}"
+msgstr "Input should be in a valid time format, {}"
+
+msgid "Input should be a valid datetime"
+msgstr "Input should be a valid datetime"
+
+msgid "Input should be a valid datetime, {}"
+msgstr "Input should be a valid datetime, {}"
+
+msgid "Invalid datetime object, got {}"
+msgstr "Invalid datetime object, got {}"
+
+msgid "Input should be a valid datetime or date, {}"
+msgstr "Input should be a valid datetime or date, {}"
+
+msgid "Input should be in the past"
+msgstr "Input should be in the past"
+
+msgid "Input should be in the future"
+msgstr "Input should be in the future"
+
+msgid "Input should not have timezone info"
+msgstr "Input should not have timezone info"
+
+msgid "Input should have timezone info"
+msgstr "Input should have timezone info"
+
+msgid "Timezone offset of {}"
+msgstr "Timezone offset of {}"
+
+msgid "Input should be a valid timedelta"
+msgstr "Input should be a valid timedelta"
+
+msgid "Input should be a valid timedelta, {}"
+msgstr "Input should be a valid timedelta, {}"
+
+msgid "Input should be a valid frozenset"
+msgstr "Input should be a valid frozenset"
+
+msgid "Input should be a subclass of {}"
+msgstr "Input should be a subclass of {}"
+
+msgid "Input should be callable"
+msgstr "Input should be callable"
+
+msgid "Input tag '{}"
+msgstr "Input tag '{}"
+
+msgid "Unable to extract tag using discriminator {}"
+msgstr "Unable to extract tag using discriminator {}"
+
+msgid "Arguments must be a tuple, list or a dictionary"
+msgstr "Arguments must be a tuple, list or a dictionary"
+
+msgid "Missing required argument"
+msgstr "Missing required argument"
+
+msgid "Unexpected keyword argument"
+msgstr "Unexpected keyword argument"
+
+msgid "Missing required keyword only argument"
+msgstr "Missing required keyword only argument"
+
+msgid "Unexpected positional argument"
+msgstr "Unexpected positional argument"
+
+msgid "Missing required positional only argument"
+msgstr "Missing required positional only argument"
+
+msgid "Got multiple values for argument"
+msgstr "Got multiple values for argument"
+
+msgid "URL input should be a string or URL"
+msgstr "URL input should be a string or URL"
+
+msgid "Input should be a valid URL, {}"
+msgstr "Input should be a valid URL, {}"
+
+msgid "Input violated strict URL syntax rules, {}"
+msgstr "Input violated strict URL syntax rules, {}"
+
+msgid "URL should have at most {}"
+msgstr "URL should have at most {}"
+
+msgid "URL scheme should be {}"
+msgstr "URL scheme should be {}"
+
+msgid "UUID input should be a string, bytes or UUID object"
+msgstr "UUID input should be a string, bytes or UUID object"
+
+msgid "Input should be a valid UUID, {}"
+msgstr "Input should be a valid UUID, {}"
+
+msgid "UUID version {} expected"
+msgstr "UUID version {} expected"
+
+msgid "Decimal input should be an integer, float, string or Decimal object"
+msgstr "Decimal input should be an integer, float, string or Decimal object"
+
+msgid "Input should be a valid decimal"
+msgstr "Input should be a valid decimal"
+
+msgid "Decimal input should have no more than {} in total"
+msgstr "Decimal input should have no more than {} in total"
+
+msgid "Decimal input should have no more than {}"
+msgstr "Decimal input should have no more than {}"
+
+msgid "Decimal input should have no more than {} before the decimal point"
+msgstr "Decimal input should have no more than {} before the decimal point"
+
+msgid ""
+"Input should be a valid python complex object, a number, or a valid "
+"complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+msgstr ""
+"Input should be a valid python complex object, a number, or a valid "
+"complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+
+msgid ""
+"Input should be a valid complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+msgstr ""
+"Input should be a valid complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+

@@ -19,7 +19,7 @@ class DevelopmentConfig(BaseSettings):
 
     use_sentry: bool = False
 
-
-    class Config:
-        env_file = ENV_FILE_PATH
-        env_file_encoding = 'utf-8'
+    model_config = {
+        'env_file': ENV_FILE_PATH,
+        'env_file_encoding': 'utf-8',
+    }

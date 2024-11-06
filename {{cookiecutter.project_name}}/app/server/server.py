@@ -1,18 +1,16 @@
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
+from fastapi.exceptions import RequestValidationError
+from fastapi_babel import BabelMiddleware, BabelConfigs
 from tortoise import Tortoise, generate_config
 from tortoise.contrib.fastapi import RegisterTortoise
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from config import settings
+from config.constants import APP_DIR
+from server.utils.exception_handler import validation_exception_handler
 
-
-{% if cookiecutter.use_sentry == 'yes' %}
-import sentry_sdk
-from sentry_sdk.integrations.fastapi import FastApiIntegration
-{% endif %}
 
 def _init_router(_app: FastAPI) -> None:
     from api import router
@@ -27,16 +25,21 @@ def _init_middleware(_app: FastAPI) -> None:
         allow_headers=settings.cors_allow_headers,
     )
 
-{% if cookiecutter.use_sentry == 'yes' %}
-def _init_sentry() -> None:
-    if settings.use_sentry:
-        sentry_sdk.init(
-            dsn=settings.sentry_dsn,
-            integrations=[FastApiIntegration()],
-            traces_sample_rate=1.0,
-            environment=settings.env,
+def _init_internalization(_app: FastAPI) -> None:
+    _app.add_middleware(
+        BabelMiddleware, babel_configs=BabelConfigs(
+            ROOT_DIR=APP_DIR.joinpath("any"),  # we need this hack because of the way BabelConfigs is implemented, it takes parent dir
+            BABEL_DEFAULT_LOCALE="en",
+            BABEL_TRANSLATION_DIRECTORY="locales",
         )
-{% endif %}
+    )
+
+def _init_exception_handlers(_app: FastAPI) -> None:
+    _app.add_exception_handler(
+        RequestValidationError,
+        validation_exception_handler,
+    )
+
 
 @asynccontextmanager
 async def lifespan_test(_app: FastAPI) -> AsyncGenerator[None, None]:
@@ -80,9 +83,7 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
         raise
 
 def create_app() -> FastAPI:
-    {% if cookiecutter.use_sentry == 'yes' %}
-    _init_sentry()
-    {% endif %}
+    
     _app = FastAPI(
         title="Hide",
         description="Hide API",
@@ -92,6 +93,8 @@ def create_app() -> FastAPI:
         redoc_url=settings.redoc_url,
     )
     _init_middleware(_app)
+    _init_internalization(_app)
+    _init_exception_handlers(_app)
     return _app
 
 app = create_app()

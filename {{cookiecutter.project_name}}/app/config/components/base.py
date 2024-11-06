@@ -11,8 +11,7 @@ class BaseConfig(BaseSettings):
     # CORS settings
     cors_origins: list[str] = ["*"]
 
-    # Sentry settings
-
-    class Config:
-        env_file = ENV_FILE_PATH
-        env_file_encoding = "utf-8"
+    model_config = {
+        'env_file': ENV_FILE_PATH,
+        'env_file_encoding': 'utf-8',
+    }

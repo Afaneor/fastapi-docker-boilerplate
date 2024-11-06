@@ -1,0 +1,337 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-11-05 19:22+0300\n"
+"PO-Revision-Date: 2024-11-05 12:59+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app/api/example/example.py:10
+msgid "bar"
+msgstr "бар"
+
+# Translations template for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#, fuzzy
+msgid "Object has no attribute '{}'"
+msgstr "У объекта нет атрибута '{}'"
+
+msgid "Invalid JSON: {}"
+msgstr "Неверный JSON: {}"
+
+msgid "JSON input should be string, bytes or bytearray"
+msgstr "JSON должен быть строкой, байтами или массивом байтов"
+
+msgid "Recursion error - cyclic reference detected"
+msgstr "Ошибка рекурсии - обнаружена циклическая ссылка"
+
+msgid "Field required"
+msgstr "Обязательное поле"
+
+msgid "Field is frozen"
+msgstr "Поле не может быть изменено (frozen)"
+
+msgid "Instance is frozen"
+msgstr "Экземпляр не может быть изменен (frozen)"
+
+msgid "Extra inputs are not permitted"
+msgstr "Дополнительные входные данные не разрешены"
+
+msgid "Keys should be strings"
+msgstr "Ключи должны быть строками"
+
+msgid "Error extracting attribute: {}"
+msgstr "Ошибка при извлечении атрибута: {}"
+
+msgid "Input should be a valid dictionary or instance of {}"
+msgstr "Входные данные должны быть словарем или экземпляром {}"
+
+msgid "Input should be a valid dictionary or object to extract fields from"
+msgstr "Входные данные должны быть словарем или объектом для извлечения полей"
+
+msgid "Input should be a dictionary or an instance of {}"
+msgstr "Входные данные должны быть словарем или экземпляром {}"
+
+msgid "Input should be an instance of {}"
+msgstr "Входные данные должны быть экземпляром {}"
+
+msgid "Input should be None"
+msgstr "Входные данные должны быть None"
+
+msgid "Input should be greater than {}"
+msgstr "Значение должно быть больше {}"
+
+msgid "Input should be greater than or equal to {}"
+msgstr "Значение должно быть больше или равно {}"
+
+msgid "Input should be less than {}"
+msgstr "Значение должно быть меньше {}"
+
+msgid "Input should be less than or equal to {}"
+msgstr "Значение должно быть меньше или равно {}"
+
+msgid "Input should be a multiple of {}"
+msgstr "Значение должно быть кратным {}"
+
+msgid "Input should be a finite number"
+msgstr "Значение должно быть конечным числом"
+
+msgid "Input should be iterable"
+msgstr "Значение должно быть итерируемым"
+
+msgid "Error iterating over object, error: {}"
+msgstr "Ошибка при итерации по объекту: {}"
+
+msgid "Input should be a valid string"
+msgstr "Значение должно быть допустимой строкой"
+
+msgid "Input should be a string, not an instance of a subclass of str"
+msgstr "Значение должно быть строкой, а не экземпляром подкласса str"
+
+msgid ""
+"Input should be a valid string, unable to parse raw data as a unicode "
+"string"
+msgstr ""
+"Значение должно быть допустимой строкой, невозможно разобрать данные как "
+"unicode строку"
+
+msgid "String should have at least {}"
+msgstr "Строка должна содержать не менее {}"
+
+msgid "String should have at most {}"
+msgstr "Строка должна содержать не более {}"
+
+msgid "String should match pattern '{}'"
+msgstr "Строка должна соответствовать шаблону '{}'"
+
+msgid "Input should be {}"
+msgstr "Значение должно быть {}"
+
+msgid "Input should be a valid dictionary"
+msgstr "Значение должно быть допустимым словарем"
+
+msgid "Input should be a valid mapping, error: {}"
+msgstr "Значение должно быть допустимым отображением, ошибка: {}"
+
+msgid "Input should be a valid list"
+msgstr "Значение должно быть допустимым списком"
+
+msgid "Input should be a valid tuple"
+msgstr "Значение должно быть допустимым кортежем"
+
+msgid "Input should be a valid set"
+msgstr "Значение должно быть допустимым множеством"
+
+msgid "Input should be a valid boolean"
+msgstr "Значение должно быть логическим (boolean)"
+
+msgid "Input should be a valid boolean, unable to interpret input"
+msgstr ""
+"Значение должно быть логическим (boolean), невозможно интерпретировать "
+"входные данные"
+
+msgid "Input should be a valid integer"
+msgstr "Значение должно быть целым числом"
+
+msgid "Input should be a valid integer, unable to parse string as an integer"
+msgstr ""
+"Значение должно быть целым числом, невозможно преобразовать строку в "
+"целое число"
+
+msgid "Unable to parse input string as an integer, exceeded maximum size"
+msgstr ""
+"Невозможно преобразовать строку в целое число, превышен максимальный "
+"размер"
+
+msgid "Input should be a valid integer, got a number with a fractional part"
+msgstr "Значение должно быть целым числом, получено число с дробной частью"
+
+msgid "Input should be a valid number"
+msgstr "Значение должно быть числом"
+
+msgid "Input should be a valid number, unable to parse string as a number"
+msgstr "Значение должно быть числом, невозможно преобразовать строку в число"
+
+msgid "Input should be a valid bytes"
+msgstr "Значение должно быть допустимыми байтами"
+
+msgid "Data should have at least {}"
+msgstr "Данные должны содержать не менее {}"
+
+msgid "Data should have at most {}"
+msgstr "Данные должны содержать не более {}"
+
+msgid "Data should be valid {}"
+msgstr "Данные должны быть допустимыми {}"
+
+msgid "Value error, {}"
+msgstr "Ошибка значения, {}"
+
+msgid "Assertion failed, {}"
+msgstr "Проверка не пройдена, {}"
+
+msgid "Input should be a valid date"
+msgstr "Значение должно быть допустимой датой"
+
+msgid "Input should be a valid date in the format YYYY-MM-DD, {}"
+msgstr "Значение должно быть допустимой датой в формате ГГГГ-ММ-ДД, {}"
+
+msgid "Input should be a valid date or datetime, {}"
+msgstr "Значение должно быть допустимой датой или датой-временем, {}"
+
+msgid "Datetimes provided to dates should have zero time - e.g. be exact dates"
+msgstr "Дата-время для дат должна иметь нулевое время - т.е. быть точными датами"
+
+msgid "Date should be in the past"
+msgstr "Дата должна быть в прошлом"
+
+msgid "Date should be in the future"
+msgstr "Дата должна быть в будущем"
+
+msgid "Input should be a valid time"
+msgstr "Значение должно быть допустимым временем"
+
+msgid "Input should be in a valid time format, {}"
+msgstr "Значение должно быть в допустимом формате времени, {}"
+
+msgid "Input should be a valid datetime"
+msgstr "Значение должно быть допустимой датой-временем"
+
+msgid "Input should be a valid datetime, {}"
+msgstr "Значение должно быть допустимой датой-временем, {}"
+
+msgid "Invalid datetime object, got {}"
+msgstr "Недопустимый объект даты-времени, получено {}"
+
+msgid "Input should be a valid datetime or date, {}"
+msgstr "Значение должно быть допустимой датой-временем или датой, {}"
+
+msgid "Input should be in the past"
+msgstr "Значение должно быть в прошлом"
+
+msgid "Input should be in the future"
+msgstr "Значение должно быть в будущем"
+
+msgid "Input should not have timezone info"
+msgstr "Значение не должно содержать информацию о часовом поясе"
+
+msgid "Input should have timezone info"
+msgstr "Значение должно содержать информацию о часовом поясе"
+
+msgid "Timezone offset of {}"
+msgstr "Смещение часового пояса {}"
+
+msgid "Input should be a valid timedelta"
+msgstr "Значение должно быть допустимым интервалом времени"
+
+msgid "Input should be a valid timedelta, {}"
+msgstr "Значение должно быть допустимым интервалом времени, {}"
+
+msgid "Input should be a valid frozenset"
+msgstr "Значение должно быть допустимым frozenset"
+
+msgid "Input should be a subclass of {}"
+msgstr "Значение должно быть подклассом {}"
+
+msgid "Input should be callable"
+msgstr "Значение должно быть вызываемым"
+
+msgid "Input tag '{}"
+msgstr "Входной тег '{}"
+
+msgid "Unable to extract tag using discriminator {}"
+msgstr "Невозможно извлечь тег, используя дискриминатор {}"
+
+msgid "Arguments must be a tuple, list or a dictionary"
+msgstr "Аргументы должны быть кортежем, списком или словарем"
+
+msgid "Missing required argument"
+msgstr "Отсутствует обязательный аргумент"
+
+msgid "Unexpected keyword argument"
+msgstr "Неожиданный именованный аргумент"
+
+msgid "Missing required keyword only argument"
+msgstr "Отсутствует обязательный именованный аргумент"
+
+msgid "Unexpected positional argument"
+msgstr "Неожиданный позиционный аргумент"
+
+msgid "Missing required positional only argument"
+msgstr "Отсутствует обязательный позиционный аргумент"
+
+msgid "Got multiple values for argument"
+msgstr "Получено несколько значений для аргумента"
+
+msgid "URL input should be a string or URL"
+msgstr "URL должен быть строкой или объектом URL"
+
+msgid "Input should be a valid URL, {}"
+msgstr "Значение должно быть допустимым URL, {}"
+
+msgid "Input violated strict URL syntax rules, {}"
+msgstr "Значение нарушает строгие правила синтаксиса URL, {}"
+
+msgid "URL should have at most {}"
+msgstr "URL должен содержать не более {}"
+
+msgid "URL scheme should be {}"
+msgstr "Схема URL должна быть {}"
+
+msgid "UUID input should be a string, bytes or UUID object"
+msgstr "UUID должен быть строкой, байтами или объектом UUID"
+
+msgid "Input should be a valid UUID, {}"
+msgstr "Значение должно быть допустимым UUID, {}"
+
+msgid "UUID version {} expected"
+msgstr "Ожидается UUID версии {}"
+
+msgid "Decimal input should be an integer, float, string or Decimal object"
+msgstr ""
+"Десятичное число должно быть целым числом, числом с плавающей точкой, "
+"строкой или объектом Decimal"
+
+msgid "Input should be a valid decimal"
+msgstr "Значение должно быть допустимым десятичным числом"
+
+msgid "Decimal input should have no more than {} in total"
+msgstr "Десятичное число должно содержать не более {} цифр всего"
+
+msgid "Decimal input should have no more than {}"
+msgstr "Десятичное число должно содержать не более {}"
+
+msgid "Decimal input should have no more than {} before the decimal point"
+msgstr "Десятичное число должно содержать не более {} цифр до десятичной точки"
+
+msgid ""
+"Input should be a valid python complex object, a number, or a valid "
+"complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+msgstr ""
+"Значение должно быть допустимым комплексным объектом Python, числом или "
+"допустимой строкой комплексного числа согласно правилам "
+"https://docs.python.org/3/library/functions.html#complex"
+
+msgid ""
+"Input should be a valid complex string following the rules at "
+"https://docs.python.org/3/library/functions.html#complex"
+msgstr ""
+"Значение должно быть допустимой строкой комплексного числа согласно "
+"правилам https://docs.python.org/3/library/functions.html#complex"
+

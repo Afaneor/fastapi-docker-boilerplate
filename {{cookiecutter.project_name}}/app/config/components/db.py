@@ -14,9 +14,10 @@ class DatabaseConfig(BaseSettings):
     test_db_url: str = Field(default='sqlite://:memory:')
 
 
-    class Config:
-        env_file = ENV_FILE_PATH
-        env_file_encoding = 'utf-8'
+    model_config = {
+        'env_file': ENV_FILE_PATH,
+        'env_file_encoding': 'utf-8',
+    }
 
     @computed_field(return_type=str)
     def postgres_connection_string(self):
