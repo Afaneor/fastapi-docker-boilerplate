@@ -17,6 +17,7 @@ pydantic-settings = "^2.4.0"
 sentry-sdk = "^2.16.0"
 pydantic-i18n = "^0.4.5"
 fastapi-babel = "^0.0.9"
+fastapi-pagination = "^0.12.31"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.4"

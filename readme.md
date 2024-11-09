@@ -21,6 +21,8 @@ Join our Russian-speaking community for discussions, questions, and support:
 - 🔄 **Redis Support**: Built-in Redis integration for caching and session management
 - 🌍 **Internationalization**: Built-in i18n support with FastAPI-Babel
 - 🚀 **GitLab CI**: Basic GitLab CI pipeline for building Docker images
+- 📚 **Documentation**: Detailed documentation for easy project setup
+- 📦 **Pagination**: Built-in pagination support for listing endpoints
 
 ## Getting Started
 

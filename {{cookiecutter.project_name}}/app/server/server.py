@@ -3,6 +3,7 @@ from typing import AsyncGenerator
 
 from fastapi.exceptions import RequestValidationError
 from fastapi_babel import BabelMiddleware, BabelConfigs
+from fastapi_pagination import add_pagination
 from tortoise import Tortoise, generate_config
 from tortoise.contrib.fastapi import RegisterTortoise
 from fastapi import FastAPI
@@ -16,6 +17,7 @@ def _init_router(_app: FastAPI) -> None:
     from api import router
     _app.include_router(router)
 
+
 def _init_middleware(_app: FastAPI) -> None:
     _app.add_middleware(
         CORSMiddleware,
@@ -25,20 +27,27 @@ def _init_middleware(_app: FastAPI) -> None:
         allow_headers=settings.cors_allow_headers,
     )
 
+
 def _init_internalization(_app: FastAPI) -> None:
     _app.add_middleware(
         BabelMiddleware, babel_configs=BabelConfigs(
-            ROOT_DIR=APP_DIR.joinpath("any"),  # we need this hack because of the way BabelConfigs is implemented, it takes parent dir
+            ROOT_DIR=APP_DIR.joinpath("any"),
+            # we need this hack because of the way BabelConfigs is implemented, it takes parent dir
             BABEL_DEFAULT_LOCALE="en",
             BABEL_TRANSLATION_DIRECTORY="locales",
         )
     )
+
 
 def _init_exception_handlers(_app: FastAPI) -> None:
     _app.add_exception_handler(
         RequestValidationError,
         validation_exception_handler,
     )
+
+
+def _init_pagination(_app: FastAPI) -> None:
+    add_pagination(_app)
 
 
 @asynccontextmanager
@@ -69,6 +78,7 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
         if getattr(_app.state, "testing", None):
             async with lifespan_test(_app) as _:
                 _init_router(_app)
+                _init_pagination(_app)
                 yield
         else:
             async with RegisterTortoise(
@@ -78,12 +88,13 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
                 add_exception_handlers=True,
             ):
                 _init_router(_app)
+                _init_pagination(_app)
                 yield
     except Exception as e:
         raise
 
+
 def create_app() -> FastAPI:
-    
     _app = FastAPI(
         title="Hide",
         description="Hide API",
