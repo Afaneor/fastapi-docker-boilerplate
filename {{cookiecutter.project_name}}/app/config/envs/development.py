@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from config.constants import ENV_FILE_PATH
 
@@ -19,7 +19,7 @@ class DevelopmentConfig(BaseSettings):
 
     use_sentry: bool = False
 
-    model_config = {
-        'env_file': ENV_FILE_PATH,
-        'env_file_encoding': 'utf-8',
-    }
+    model_config = SettingsConfigDict(
+        env_file=ENV_FILE_PATH,
+        env_file_encoding='utf-8',
+    )

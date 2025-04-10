@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from config.constants import ENV_FILE_PATH
 
@@ -17,7 +17,7 @@ class ProductionConfig(BaseSettings):
     cors_allow_methods: list[str] = ["GET", "POST", "PUT", "DELETE"]
     cors_allow_headers: list[str] = ["*"]
 
-    model_config = {
-        'env_file': ENV_FILE_PATH,
-        'env_file_encoding': 'utf-8',
-    }
+    model_config = SettingsConfigDict(
+        env_file=ENV_FILE_PATH,
+        env_file_encoding='utf-8',
+    )

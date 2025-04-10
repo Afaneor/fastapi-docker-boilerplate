@@ -3,11 +3,11 @@ from config.envs.development import DevelopmentConfig
 from config.envs.production import ProductionConfig
 
 
-class ProductionSettings(ComponentsConfig, ProductionConfig):
+class ProductionSettings(ProductionConfig, ComponentsConfig):
     ...
 
 
-class DevelopmentSettings(ComponentsConfig, DevelopmentConfig):
+class DevelopmentSettings(DevelopmentConfig, ComponentsConfig):
     ...
 
 
