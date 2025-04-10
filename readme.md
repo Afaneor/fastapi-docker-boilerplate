@@ -2,6 +2,8 @@
 
 This project is a high-performance template for quickly creating APIs using FastAPI, TortoiseORM, and Docker. It's ideal for developers who want to quickly start new projects with a modern technology stack.
 
+### You can find overview of this template in the [youtube video](https://www.youtube.com/watch?v=4AMxbzZYOnU)
+
 ## Community
 
 Join our Russian-speaking community for discussions, questions, and support:
