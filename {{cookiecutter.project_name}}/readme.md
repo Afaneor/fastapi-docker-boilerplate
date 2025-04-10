@@ -34,6 +34,12 @@ python3 app/main.py
 docker-compose up -d
 ```
 
+### using docker for development
+
+```shell
+docker-compose -f docker-compose.local.yml up -d
+```
+
 ## Configuration
 
 Project settings are divided into components and environments (development/production). They are located in the `app/config/components/` directory.
