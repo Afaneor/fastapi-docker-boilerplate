@@ -1,23 +1,24 @@
 [tool.poetry]
-name = "{{cookiecutter.project_name}}"
+name = "test-docker-app"
 version = "0.1.0"
-description = "{{cookiecutter.description}}"
-authors = ["{{cookiecutter.author}}"]
+description = "Your new great project"
+authors = ["Your name"]
 license = "MIT"
+package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.9, <4.0"
-fastapi = {extras = ["standard"], version = "^0.115.4"}
-uvicorn = {extras = ["standard"], version = "^0.32"}
+python = ">=3.11, <4.0"
+fastapi = {extras = ["standard"], version = "^0.115"}
+uvicorn = {extras = ["standard"], version = "^0.34"}
 django-split-settings = "^1.1.0"
-tortoise-orm = {extras = ["asyncpg"], version = "^0.21"}
-aerich = "0.7.1"
-httpx = "^0.27"
-pydantic-settings = "^2.4.0"
-sentry-sdk = "^2.16.0"
+tortoise-orm = {extras = ["asyncpg"], version = "^0.24"}
+aerich = "^0.8"
+httpx = "^0.28"
+pydantic-settings = "^2.8"
+sentry-sdk = "^2.25"
 pydantic-i18n = "^0.4.5"
-fastapi-babel = "^0.0.9"
-fastapi-pagination = "^0.12.31"
+fastapi-babel = "^1"
+fastapi-pagination = "^0.12"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.4"
