@@ -2,10 +2,13 @@ version: "3.9"
 
 services:
   server:
-    image: ${IMAGE_FULL_NAME-{{cookiecutter.project_name}}}
+    image: ${IMAGE_FULL_NAME-test-docker-app}
     build:
       context: .
       dockerfile: docker/Dockerfile
+      target: production
+    depends_on:
+      - postgres
     environment:
       ENV: production
     networks:

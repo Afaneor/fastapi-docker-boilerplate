@@ -1,4 +1,4 @@
-FROM python:3.10-slim as python-base
+FROM python:3.11-slim AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     POETRY_VIRTUALENVS_CREATE=false \
@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off \
     USE_DOCKER=1 \
 	# poetry:
-	POETRY_VERSION=1.6.1 \
+	POETRY_VERSION=2.1.2 \
 	POETRY_VIRTUALENVS_CREATE=false \
 	POETRY_CACHE_DIR='/var/cache/pypoetry' \
 	# Locale settings
@@ -24,7 +24,7 @@ ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 ###############################################
 # Builder Image
 ###############################################
-FROM python-base as builder-base
+FROM python-base AS builder-base
 
 RUN apt-get update && apt-get upgrade -y \
   && apt-get install --no-install-recommends -y \
@@ -43,10 +43,14 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
-RUN poetry install --no-dev
+RUN poetry install --without dev
 
-FROM builder-base as production
-COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
+FROM builder-base AS development
+# we make this to reproduce the same structure as repo for aerich
+RUN poetry install
+WORKDIR /app/
+
+FROM builder-base AS production
 # we make this to reproduce the same structure as repo for aerich
 COPY ./app /app/app
 COPY pyproject.toml /app/pyproject.toml

@@ -5,11 +5,11 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-      target: production
+      target: development
     ports:
       - "8000:8000"
     environment:
-      ENV: production
+      ENV: development
     env_file:
       - .env
     depends_on:
@@ -17,6 +17,8 @@ services:
     networks:
       - postgres
       - backend
+    volumes:
+      - ./app:/app/app
 
   postgres:
     image: postgres:15.1
