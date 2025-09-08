@@ -8,17 +8,17 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.11, <4.0"
-fastapi = {extras = ["standard"], version = "^0.115"}
-uvicorn = {extras = ["standard"], version = "^0.34"}
+fastapi = {extras = ["standard"], version = "^0.116"}
+uvicorn = {extras = ["standard"], version = "^0.35"}
 django-split-settings = "^1.1.0"
-tortoise-orm = {extras = ["asyncpg"], version = "^0.24"}
-aerich = "^0.8"
+tortoise-orm = {extras = ["asyncpg"], version = "^0.25"}
+aerich = "^0.9"
 httpx = "^0.28"
-pydantic-settings = "^2.8"
-sentry-sdk = "^2.25"
+pydantic-settings = "^2.10"
+sentry-sdk = "^2.37"
 pydantic-i18n = "^0.4.5"
 fastapi-babel = "^1"
-fastapi-pagination = "^0.12"
+fastapi-pagination = "^0.14"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.4"
