@@ -1,0 +1,47 @@
+{
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // .tool_input.path // \"\"' | python3 -c \"import sys; path = sys.stdin.read().strip(); protected = ['.env', 'poetry.lock', 'pyproject.toml', 'app/db/migrations/', 'Dockerfile', 'docker-compose.yml']; sys.exit(2 if any(p in path for p in protected) else 0)\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git commit*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git diff --cached --name-only | xargs grep -nHE '(API_KEY|SECRET|PASSWORD|TOKEN|PRIVATE_KEY)\\s*=\\s*[\"'\\'''][^\"'\\''']{8,}' 2>/dev/null && echo '🚨 Potential secrets detected! Use environment variables.' && exit 2 || exit 0"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // .tool_input.path // \"\"' | { read file_path; if [ -n \"$file_path\" ] && echo \"$file_path\" | grep -q '\\.py$'; then poetry run ruff format \"$file_path\" 2>/dev/null && echo \"✓ Formatted $file_path\" || true; fi; }"
+          }
+        ]
+      },
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\n🔍 Running quality checks...' && poetry run ruff format . --check && poetry run ruff check . && echo '✅ All quality checks passed!' || echo '⚠️  Fix quality issues with: poetry run ruff format . && poetry run ruff check . --fix'"
+          }
+        ]
+      }
+    ]
+  }
+}
